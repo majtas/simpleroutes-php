@@ -22,4 +22,11 @@ class Routes {
 		}
 	}
 
+	public static function run()
+	{
+		$request_uri = trim($_SERVER['REQUEST_URI'], '/');
+		if(array_key_exists($request_uri, static::$routes))
+			return call_user_func(static::$routes[$request_uri]);
+		exit("Route has not defined");
+	}
 }
