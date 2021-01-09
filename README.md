@@ -11,17 +11,15 @@ Below is an example of using the library in code.
 
   require_once("Routes/Routes.php");
 
-  $routes = new Routes();
-
-  $routes->get('/', function() {
+  Routes::get('/', function() {
     echo "Hello world!";
   });
 
-  $routes->post('/', function() {
+  Routes::post('/', function() {
     echo "Thank you for completing the form";
   });
 
-  $routes->run();
+  Routes::run();
 ```
 
 ## Important
